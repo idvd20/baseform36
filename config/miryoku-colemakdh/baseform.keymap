@@ -1,0 +1,171 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
+// Layer definitions
+#define BASE 0
+#define NAV  1
+#define MOUSE 2
+#define MEDIA 3
+#define NUM  4
+#define SYM  5
+#define FUN  6
+#define BUTTON 7
+
+&soft_off {
+    hold-time-ms = <2000>;
+};
+
+/ {
+
+  behaviors {
+    // Home row mods - left hand
+    hm_l: homerow_mods_left {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_LEFT";
+      #binding-cells = <2>;
+      tapping-term-ms = <170>;
+      quick-tap-ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32>; // right hand + thumbs
+    };
+
+    // Home row mods - right hand
+    hm_r: homerow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_RIGHT";
+      #binding-cells = <2>;
+      tapping-term-ms = <170>;
+      quick-tap-ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>; // left hand + thumbs
+    };
+
+    // Layer tap for thumb keys
+    lt_spc: layer_tap_space {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_TAP_SPACE";
+      #binding-cells = <2>;
+      tapping-term-ms = <170>;
+      quick-tap-ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+
+    lt_bspc: layer_tap_backspace {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_TAP_BACKSPACE";
+      #binding-cells = <2>;
+      tapping-term-ms = <170>;
+      quick-tap-ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    // Layer 0: BASE (Colemak Mod-DH with GACS home row mods)
+    base_layer {
+      display-name = "Base";
+      bindings = <
+        // Left hand                                                Right hand
+        &kp Q         &kp W         &kp F         &kp P  &kp B     &kp J  &kp L         &kp U         &kp Y         &kp APOS
+        &hm_l LGUI A  &hm_l LALT R  &hm_l LCTRL S &hm_l LSHFT T  &kp G     &kp M  &hm_r RSHFT N &hm_r RCTRL E &hm_r RALT I  &hm_r RGUI O
+        &kp Z         &kp X         &kp C         &kp D  &kp V     &kp K  &kp H         &kp COMMA     &kp DOT       &kp FSLH
+                                    &lt_bspc NUM BSPC  &lt_bspc SYM RET  &lt_bspc FUN DEL     &lt_spc NAV SPACE  &lt_spc MOUSE TAB  &lt_spc MEDIA ESC
+      >;
+    };
+
+    // Layer 1: NAV (Right hand - Navigation with inverted-T arrows)
+    nav_layer {
+      display-name = "Nav";
+      bindings = <
+        // Left hand                                                Right hand (inverted-T navigation)
+        &trans  &trans  &trans  &trans  &trans     &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans     &kp CAPS  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
+        &trans  &trans  &trans  &trans  &trans     &kp INS  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+                                &trans  &trans  &trans     &trans  &trans  &trans
+      >;
+    };
+
+    // Layer 2: MOUSE (Right hand - Mouse control)
+    mouse_layer {
+      display-name = "Mouse";
+      bindings = <
+        // Left hand                                                Right hand
+        &trans  &trans  &trans  &trans  &trans     &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans     &none  &none  &none  &none  &none
+        &trans  &trans  &trans  &trans  &trans     &none  &none  &none  &none  &none
+                                &trans  &trans  &trans     &trans  &trans  &trans
+      >;
+    };
+
+    // Layer 3: MEDIA (Right hand - Media controls)
+    media_layer {
+      display-name = "Media";
+      bindings = <
+        // Left hand                                                Right hand
+        &trans  &trans  &trans  &trans  &trans     &none  &none  &none  &none  &none
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans     &none  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+        &trans  &trans  &trans  &trans  &trans     &none  &none  &none  &none  &none
+                                &trans  &trans  &trans     &kp C_STOP  &kp C_PP  &kp C_MUTE
+      >;
+    };
+
+    // Layer 4: NUM (Left hand - Number pad)
+    num_layer {
+      display-name = "Num";
+      bindings = <
+        // Left hand (number pad)                                   Right hand
+        &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT     &trans  &trans  &trans  &trans  &trans
+        &kp SEMI  &kp N4  &kp N5  &kp N6  &kp EQUAL     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+        &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH     &trans  &trans  &trans  &trans  &trans
+                                &kp DOT  &kp N0  &kp MINUS     &trans  &trans  &trans
+      >;
+    };
+
+    // Layer 5: SYM (Left hand - Symbols)
+    sym_layer {
+      display-name = "Sym";
+      bindings = <
+        // Left hand (symbols)                                      Right hand
+        &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC     &trans  &trans  &trans  &trans  &trans
+        &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+        &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp PIPE     &trans  &trans  &trans  &trans  &trans
+                                &kp LPAR  &kp RPAR  &kp UNDER     &trans  &trans  &trans
+      >;
+    };
+
+    // Layer 6: FUN (Left hand - Function keys)
+    fun_layer {
+      display-name = "Fun";
+      bindings = <
+        // Left hand (function keys)                               Right hand
+        &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN     &trans  &trans  &trans  &trans  &trans
+        &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+        &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK     &trans  &trans  &trans  &trans  &trans
+                                &kp K_APP  &kp SPACE  &kp TAB     &trans  &trans  &trans
+      >;
+    };
+
+    // Layer 7: BUTTON (Additional controls and Bluetooth/System)
+    button_layer {
+      display-name = "Button";
+      bindings = <
+        // Left hand                                                Right hand
+        &soft_off  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR     &bt BT_CLR  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &soft_off
+        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+        &none  &none  &bootloader  &sys_reset  &none     &none  &sys_reset  &bootloader  &none  &none
+                                &trans  &trans  &trans     &trans  &trans  &trans
+      >;
+    };
+
+  };
+};
