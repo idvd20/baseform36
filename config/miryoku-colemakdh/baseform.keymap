@@ -84,7 +84,7 @@
         // Bottom row (12 keys)
         &none  &kp Z         &kp X         &kp C         &kp D         &kp V       &kp K  &kp H         &kp COMMA     &kp DOT       &kp FSLH      &none
         // Thumb keys (6 keys)
-                                           &lt_bspc NUM BSPC  &lt_bspc SYM RET  &lt_bspc FUN DEL     &lt_spc NAV SPACE  &lt_spc MOUSE TAB  &lt_spc MEDIA ESC
+                                           &lt_bspc FUN DEL  &lt_bspc SYM RET  &lt_bspc NUM BSPC     &lt_spc MOUSE TAB  &lt_spc NAV SPACE  &lt_spc MEDIA ESC
       >;
     };
 
