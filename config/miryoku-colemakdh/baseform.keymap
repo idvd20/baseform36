@@ -27,7 +27,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_LEFT";
       #binding-cells = <2>;
-      tapping-term-ms = <280>;
+      tapping-term-ms = <170>;
       quick-tap-ms = <175>;
       require-prior-idle-ms = <150>;
       flavor = "balanced";
@@ -41,7 +41,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_RIGHT";
       #binding-cells = <2>;
-      tapping-term-ms = <280>;
+      tapping-term-ms = <170>;
       quick-tap-ms = <175>;
       require-prior-idle-ms = <150>;
       flavor = "balanced";
@@ -69,6 +69,136 @@
       quick-tap-ms = <175>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
+    };
+  };
+
+  combos {
+    compatible = "zmk,combos";
+
+    // CMD+C (Copy) - using left GUI
+    combo_copy_left {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 39>;  // A(GUI) + C
+      bindings = <&kp LG(C)>;
+      layers = <0>;
+    };
+
+    // CMD+C (Copy) - using right GUI
+    combo_copy_right {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 39>;  // O(GUI) + C
+      bindings = <&kp LG(C)>;
+      layers = <0>;
+    };
+
+    // CMD+V (Paste) - using left GUI
+    combo_paste_left {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 41>;  // A(GUI) + V
+      bindings = <&kp LG(V)>;
+      layers = <0>;
+    };
+
+    // CMD+V (Paste) - using right GUI
+    combo_paste_right {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 41>;  // O(GUI) + V
+      bindings = <&kp LG(V)>;
+      layers = <0>;
+    };
+
+    // CMD+X (Cut) - using left GUI
+    combo_cut_left {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 38>;  // A(GUI) + X
+      bindings = <&kp LG(X)>;
+      layers = <0>;
+    };
+
+    // CMD+X (Cut) - using right GUI
+    combo_cut_right {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 38>;  // O(GUI) + X
+      bindings = <&kp LG(X)>;
+      layers = <0>;
+    };
+
+    // CMD+Z (Undo) - using left GUI
+    combo_undo_left {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 37>;  // A(GUI) + Z
+      bindings = <&kp LG(Z)>;
+      layers = <0>;
+    };
+
+    // CMD+Z (Undo) - using right GUI
+    combo_undo_right {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 37>;  // O(GUI) + Z
+      bindings = <&kp LG(Z)>;
+      layers = <0>;
+    };
+
+    // CMD+W (Close) - using left GUI
+    combo_close_left {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 14>;  // A(GUI) + W
+      bindings = <&kp LG(W)>;
+      layers = <0>;
+    };
+
+    // CMD+W (Close) - using right GUI
+    combo_close_right {
+      timeout-ms = <30>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 14>;  // O(GUI) + W
+      bindings = <&kp LG(W)>;
+      layers = <0>;
+    };
+
+    // CMD+Space (Spotlight) - using left GUI
+    combo_spotlight_left {
+      timeout-ms = <40>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 52>;  // A(GUI) + Space
+      bindings = <&kp LG(SPACE)>;
+      layers = <0>;
+    };
+
+    // CMD+Space (Spotlight) - using right GUI
+    combo_spotlight_right {
+      timeout-ms = <40>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 52>;  // O(GUI) + Space
+      bindings = <&kp LG(SPACE)>;
+      layers = <0>;
+    };
+
+    // CMD+Tab (App Switcher) - using left GUI + TAB thumb
+    combo_appswitcher_left {
+      timeout-ms = <40>;
+      require-prior-idle-ms = <150>;
+      key-positions = <25 51>;  // A(GUI) + Tab
+      bindings = <&kp LG(TAB)>;
+      layers = <0>;
+    };
+
+    // CMD+Tab (App Switcher) - using right GUI + TAB thumb
+    combo_appswitcher_right {
+      timeout-ms = <40>;
+      require-prior-idle-ms = <150>;
+      key-positions = <34 51>;  // O(GUI) + Tab
+      bindings = <&kp LG(TAB)>;
+      layers = <0>;
     };
   };
 
