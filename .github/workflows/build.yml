@@ -87,7 +87,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        layout: [qwerty, colemak, dvorak, test]
+        layout: [qwerty, colemak, dvorak, test, miryoku-colemakdh]
         split:  [duo, trio]
 
     steps:
