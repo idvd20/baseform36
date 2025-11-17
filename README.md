@@ -5,18 +5,19 @@ The TRIO firmware is what you want if you're running Baseform with a Central Mod
 The DUO firmware is for running the Baseform without the Central Module. Your left half acts as a Central. This version has limited testing, and might have bugs.
 
 <!-- FIRMWARE-LINKS:START - Do not edit below, this section is managed by CI -->
-#### Firmware v2025.09.18a
+#### Firmware v1.0.0-miryoku
 - QWERTY
-  - [Duo](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/qwerty_duo-v2025.09.18a.zip)
-  - [Trio](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/qwerty_trio-v2025.09.18a.zip)
+  - [Duo](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/qwerty_duo-v1.0.0-miryoku.zip)
+  - [Trio](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/qwerty_trio-v1.0.0-miryoku.zip)
 - Colemak
-  - [Duo](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/colemak_duo-v2025.09.18a.zip)
-  - [Trio](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/colemak_trio-v2025.09.18a.zip)
+  - [Duo](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/colemak_duo-v1.0.0-miryoku.zip)
+  - [Trio](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/colemak_trio-v1.0.0-miryoku.zip)
 - Dvorak
-  - [Duo](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/dvorak_duo-v2025.09.18a.zip)
-  - [Trio](https://github.com/posture-atelier/baseform/releases/download/v2025.09.18a/dvorak_trio-v2025.09.18a.zip)
+  - [Duo](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/dvorak_duo-v1.0.0-miryoku.zip)
+  - [Trio](https://github.com/idvd20/baseform36/releases/download/v1.0.0-miryoku/dvorak_trio-v1.0.0-miryoku.zip)
 
 <!-- FIRMWARE-LINKS:END -->
+
 
 
 
