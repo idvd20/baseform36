@@ -13,7 +13,7 @@ def _builds():
     return data['include']
 
 
-layouts = ['qwerty', 'colemak', 'dvorak', 'test']
+layouts = ['qwerty', 'colemak', 'dvorak', 'test', 'miryoku-colemakdh']
 
 
 def _has_build(predicate):
