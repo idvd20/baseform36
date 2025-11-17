@@ -281,6 +281,7 @@ jobs:
             make_group qwerty  "QWERTY"
             make_group colemak "Colemak"
             make_group dvorak  "Dvorak"
+            make_group miryoku-colemakdh "Miryoku-ColemakDH"
             echo
             echo "$END"
           } > "$NEWFILE"
