@@ -306,16 +306,16 @@
     dev_layer {
       display-name = "Dev";
       bindings = <
-        // Number row
+        // Number row (12 keys - all none)
         &none  &none  &none  &none  &none  &none     &none  &none  &none  &none  &none  &none
-        // Top row
-        &none  &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)     &trans  &trans  &trans  &trans  &trans  &none
-        // Home row
-        &none  &none  &none  &none  &none  &none     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-        // Bottom row
-        &none  &none  &none  &none  &none  &none     &trans  &trans  &trans  &trans  &trans  &none
-        // Thumbs
-                                &trans  &trans  &trans     &trans  &trans  &trans
+        // Top row: jumplist + quickfix on left; right hand trans
+        &none  &kp LC(O)   &kp LC(I)    &m_prev_qf   &m_next_qf   &none           &trans  &trans     &trans     &trans     &trans     &none
+        // Home row: save + window movement on left; right home row mods preserved
+        &none  &m_save     &m_win_left  &m_win_down  &m_win_up    &m_win_right    &trans  &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI   &none
+        // Bottom row: quit + splits + hunk nav on left; right hand trans
+        &none  &m_quit     &m_vsplit    &m_hsplit    &m_prev_hunk &m_next_hunk    &trans  &trans     &trans     &trans     &trans     &none
+        // Thumbs (all transparent)
+                                        &trans  &trans  &trans     &trans  &trans  &trans
       >;
     };
 
