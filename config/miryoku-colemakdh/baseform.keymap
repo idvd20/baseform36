@@ -8,7 +8,7 @@
 // Layer definitions
 #define BASE 0
 #define NAV  1
-#define MOUSE 2
+#define DEV 2
 #define MEDIA 3
 #define NUM  4
 #define SYM  5
@@ -281,7 +281,7 @@
         // Bottom row (12 keys)
         &none  &kp Z         &kp X         &kp C         &kp D         &kp V       &kp K  &kp H         &kp COMMA     &kp DOT       &kp FSLH      &none
         // Thumb keys (6 keys)
-                                           &lt_bspc FUN DEL  &lt_bspc NUM BSPC  &lt_bspc SYM RET     &lt_spc MOUSE TAB  &lt_spc NAV SPACE  &lt_spc MEDIA ESC
+                                           &lt_bspc FUN DEL  &lt_bspc NUM BSPC  &lt_bspc SYM RET     &lt_spc DEV TAB  &lt_spc NAV SPACE  &lt_spc MEDIA ESC
       >;
     };
 
@@ -302,9 +302,9 @@
       >;
     };
 
-    // Layer 2: MOUSE (Left hand - Mouse control) - 54 keys
-    mouse_layer {
-      display-name = "Mouse";
+    // Layer 2: DEV (Right thumb hold - nvim diff/save/window/jumplist) - 54 keys
+    dev_layer {
+      display-name = "Dev";
       bindings = <
         // Number row
         &none  &none  &none  &none  &none  &none     &none  &none  &none  &none  &none  &none
