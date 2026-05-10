@@ -202,6 +202,69 @@
     };
   };
 
+  macros {
+    m_save: m_save {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp COLON &kp W &kp RET>;
+    };
+    m_quit: m_quit {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp COLON &kp Q &kp RET>;
+    };
+    m_next_hunk: m_next_hunk {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp RBKT &kp C>;
+    };
+    m_prev_hunk: m_prev_hunk {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LBKT &kp C>;
+    };
+    m_next_qf: m_next_qf {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp RBKT &kp Q>;
+    };
+    m_prev_qf: m_prev_qf {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LBKT &kp Q>;
+    };
+    m_win_left: m_win_left {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp H>;
+    };
+    m_win_down: m_win_down {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp J>;
+    };
+    m_win_up: m_win_up {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp K>;
+    };
+    m_win_right: m_win_right {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp L>;
+    };
+    m_vsplit: m_vsplit {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp V>;
+    };
+    m_hsplit: m_hsplit {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp LC(W) &kp S>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
