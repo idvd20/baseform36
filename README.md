@@ -21,6 +21,14 @@ The DUO firmware is for running the Baseform without the Central Module. Your le
 
 <!-- FIRMWARE-LINKS:END -->
 
+## Keymap visualizations
+
+See [`docs/keymap/`](docs/keymap/README.md) for layer-by-layer visualizations of the Miryoku Colemak-DH layout with the custom DEV layer.
+
+## Paired nvim config
+
+The companion repo [`idvd20/nvim-baseform36`](https://github.com/idvd20/nvim-baseform36) ships a Neovim + tmux setup tuned for this keymap.
+
 
 
 
