@@ -9,10 +9,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: e34793e
+      revision: v0.3
       import: app/west.yml
     - name: zmk-dongle-display
       remote: englmaxi
-      revision: main
+      revision: c6c4be11c5ede722086a2a1f355cec9c101b9390
   self:
     path: config

@@ -76,12 +76,14 @@ jobs:
           echo "PRERELEASE=$PRE" | tee -a "$GITHUB_OUTPUT"
 
   # 1) Build using ZMK's official workflow.
-  # Pinned to e34793e (2025-11-17) — matches config/west.yml — to dodge
-  # the post-Zephyr-4.1 ZMK_BOARD_COMPAT validation step that fails for
-  # nice_nano_v2 in ZMK main. Unpin when the build migrates to the new
-  # Zephyr 4.1 board variant scheme.
+  # Pinned to v0.3 (release tag) per ZMK's official pinning guidance:
+  # https://zmk.dev/blog/2025/06/20/pinned-zmk
+  # This dodges the post-Zephyr-4.1 ZMK_BOARD_COMPAT validation step that
+  # fails for nice_nano_v2 in ZMK main. Upgrade to the new Zephyr 4.1
+  # board variant scheme is documented at:
+  # https://zmk.dev/blog/2025/12/09/zephyr-4-1
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@e34793e
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
     needs: [determine-tag]
 
   # 2) Package: collect outputs, rename with tag, zip per layout/split
